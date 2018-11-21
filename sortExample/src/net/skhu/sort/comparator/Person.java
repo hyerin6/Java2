@@ -1,5 +1,7 @@
 package net.skhu.sort.comparator;
 
+import java.util.Objects;
+
 public class Person {
 	String name;
 	int age;
@@ -18,8 +20,8 @@ public class Person {
 			return false; 
 
 		Person p = (Person)obj; 
-		return (this.name == null ? p.name == null : this.name.equals(p.name)) 
-				&& this.age == p.age; 
+		//return (this.name == null ? p.name == null : this.name.equals(p.name)) && this.age == p.age;
+		return Objects.equals(this.name, p.name) && this.age == p.age;
 	}
 
 	@Override 
