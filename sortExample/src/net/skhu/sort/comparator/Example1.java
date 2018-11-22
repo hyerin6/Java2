@@ -11,7 +11,7 @@ public class Example1 {
 				new Person("홍길동", 18),
 				new Person("임꺽정", 22),
 				new Person("전우치", 23) 
-		};
+		}; 
 
 		Arrays.sort(a, new PersonNameComparator());
 		System.out.println(Arrays.toString(a));
