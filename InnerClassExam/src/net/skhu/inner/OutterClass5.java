@@ -20,7 +20,7 @@ public class OutterClass5 extends JFrame{ // + OutterClass6, OutterClass8
 		getContentPane().add(button); 
 
 		/*
-		anonymous inner class 문법으로 구현
+		anonymous inner class 문법으로 구현 - 자식클래스 이름을 생략한다.
 
 		(1) ActionListener 인터페이스를 구현(implements)한 자식 클래스를 만들었다.
 			이 자식 클래스의 이름은 없다. -> anonymous class
@@ -35,6 +35,7 @@ public class OutterClass5 extends JFrame{ // + OutterClass6, OutterClass8
 			}	
 		};
 
+		위 코드에서 객체를 생성했다. 메소드를 호출한 것은 아니다.
 		 */
 
 		// 위 코드와 동일
@@ -45,7 +46,6 @@ public class OutterClass5 extends JFrame{ // + OutterClass6, OutterClass8
 			}
 		}); 
 	}
-
 	// 위 코드와 동일 - lambda expression 활용
 	// button.addActionListener(e -> JOptionPane.showMessageDialog(OutterClass8.this, message));
 
