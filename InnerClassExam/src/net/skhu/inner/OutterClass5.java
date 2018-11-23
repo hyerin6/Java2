@@ -23,7 +23,6 @@ public class OutterClass5 extends JFrame{ // + OutterClass6, OutterClass8
 		anonymous inner class 문법으로 구현 - 자식클래스 이름을 생략한다.
 
 		(1) ActionListener 인터페이스를 구현(implements)한 자식 클래스를 만들었다.
-			이 자식 클래스의 이름은 없다. -> anonymous class
 		(2) 이 자식 클래스에서 actionPerformed 메소드를 재정의하였다.
 		(3) 이 자식 클래스의 객체가 하나 생성되고,
 		(4) 그 객체에 대한 참조가 listener 지역 변수에 대입된다.
