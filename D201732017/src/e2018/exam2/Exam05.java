@@ -9,10 +9,9 @@ public class Exam05 {
 	static void removeEvenNumbers(Collection<Integer> c) {
 		Iterator<Integer> i = c.iterator();
 
-		while(i.hasNext()) {
-			int j = i.next();
-			if(j %  2 == 0) i.remove();
-		}
+		while(i.hasNext()) 
+			if(i.next() % 2 == 0)
+				i.remove();
 	}
 
 	public static void main(String[] args) {
