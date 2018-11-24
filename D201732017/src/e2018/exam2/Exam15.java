@@ -24,23 +24,21 @@ public class Exam15 {
 		a2[index] = value; 
 		return a2;
 		 */
+		
+		int index = Arrays.binarySearch(a, value); 
 
-		boolean tf = true;
+		if (index >= 0) 
+			return a; 
 
-		for(int i : a)
-			if(i == value) tf = false;
-
-		if(tf) {
-			int[] tempArray = new int[a.length+1];
-			int length = a.length;
-			for (int j = 0; j < length; j++) {
-				tempArray[j] = a[j];
-			}
-			a = tempArray;
-
-			a[a.length-1] = value;
-		}
-
+		int[] tempArray = new int[a.length+1];
+		int length = a.length;
+		
+		for (int j = 0; j < length; j++) 
+			tempArray[j] = a[j];
+		
+		a = tempArray;
+		a[a.length-1] = value;
+		
 		sort(a);
 		return a;
 
