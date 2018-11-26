@@ -1,16 +1,39 @@
-package skhu.hyerin;
-import java.util.*;
+package calculator;
+
+import java.util.Stack;
+import java.util.StringTokenizer;
+
 public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = "2 × 5 + 3 - 10 ";
-		System.out.println("중위 표기법 : " + s);
-		Stack<String> stack = new Stack<String>();
-		String[] expression = s.split(" ");
+
+		String s = "1+2×3+1";
+
+		StringTokenizer num = new StringTokenizer(s, "+-/× ");
+		StringTokenizer oper = new StringTokenizer(s, "1234567890 ");
+
+		String[] expression = new String[num.countTokens()+oper.countTokens()];
 		String[] expression2 = new String[expression.length];
 
-		int i=0;
+		Stack<Object> stack = new Stack<>();
+		Stack<Integer> stack2 = new Stack<>();
+
+		int i = 0;
+		while(num.hasMoreTokens()){
+			String data = num.nextToken();
+			expression[i] = data;
+			i  = i+2;
+		}
+
+		i = 1;
+		while(oper.hasMoreTokens()) {
+			String data = oper.nextToken();
+			expression[i] = data;
+			i = i+2;
+		}
+
+		i = 0;
 		for (String s1 : expression) {
 			switch(s1) {
 			case "+":
@@ -61,7 +84,6 @@ public class Test {
 		int num1, num2;
 		int result;
 
-		Stack<Integer> stack2 = new Stack<Integer>();
 
 		for(i = 0; i<expression2.length; i++) {
 			if(expression2[i].equals("+")) {
