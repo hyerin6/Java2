@@ -20,6 +20,7 @@ public class Example6 {
 			++count;
 			map.put(key, count);
 		}
+
 		for (int key : map.keySet())
 			System.out.printf("%d=%d ", key, map.get(key));
 	}
