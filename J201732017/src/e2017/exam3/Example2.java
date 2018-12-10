@@ -6,21 +6,11 @@ public class Example2 {
 	static List<String> solution(String[] a1, String[] a2, String[] a3) { 
 		// (a1 ∪ a2) - a3
 
-		List<String> list = Arrays.asList(a1);
-		List<String> output = new ArrayList<>();
-
-		for(int i = 0; i < list.size(); ++i) {
-			output.add(a1[i]);
-			if(!list.contains(a2[i])) 
-				output.add(a2[i]);
-		}
-
-		for(int i = 0; i < a3.length; ++i) {
-			if(output.contains(a3[i]))
-				output.remove(a3[i]);
-		}
-
-		return output;
+		List<String> list = new ArrayList<String>();
+		list.addAll(Arrays.asList(a1));
+		list.addAll(Arrays.asList(a2));
+		list.removeAll(Arrays.asList(a3));
+		return list;
 	}
 
 	public static void main(String[] args) {

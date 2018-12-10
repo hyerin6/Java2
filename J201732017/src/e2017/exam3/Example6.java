@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Example6 {
 
-	static void solution(int[] a) { 
+	/*static void solution(int[] a) { 
 
 		List<Integer> list = new ArrayList<>();
 
@@ -17,7 +17,18 @@ public class Example6 {
 
 		for(int i = 0; i < a.length; ++i)
 			a[i] = (i < list.size() ? list.get(i) : -1);
+	}*/
+
+	static void solution(int[] a) {
+		int index = 0;
+		for (int i = 0; i < a.length && a[i] > 0; ++i)
+			if ((a[i] % 2) != 0 && (a[i] % 3) != 0)
+				a[index++] = a[i];
+		for (int i = index; i < a.length; ++i)
+			a[i] = -1;
 	}
+
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -12,7 +12,8 @@ public class Example4 {
 
 		// [^>]+ - '>'가 아닌 것 1개 ~ 여러개
 		// [^<]+ - '<'가 아닌 것 1개 ~ 여러개
-		String regex = "<([^>]+)>([^<]+)";
+		// String regex = "<([^>]+)>([^<]+)";
+		String regex = "<([a-z]+)>([^<]+)</[a-z]+>";
 
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(s);
@@ -20,8 +21,6 @@ public class Example4 {
 		// 주의 - group(0)은 전체 출력이다!
 		while(m.find()) 
 			System.out.printf("TAG: %s  TEXT: %s \n", m.group(1), m.group(2));
-
-
 	}
 
 }

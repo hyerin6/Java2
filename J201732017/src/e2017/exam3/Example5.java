@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class Example5 {
 
-	static String[] convertToArray(String s) {
+	/*static String[] convertToArray(String s) {
 		Pattern p = Pattern.compile("[a-zA-Z]+");
 		Matcher m = p.matcher(s);
 
@@ -17,6 +17,12 @@ public class Example5 {
 			list.add(m.group(0));
 
 		return list.toArray(new String[list.size()]);
+	}*/
+
+	static String[] convertToArray(String s) {
+		s = s.replaceAll("^[^a-zA-Z]+", "");
+		s = s.replaceAll("[^a-zA-Z]+$", "");
+		return s.split("[^a-zA-Z]+");
 	}
 
 	public static void main(String[] args) {
