@@ -1,24 +1,17 @@
-package e2018.exam2;
-
-class Hello {
-    World world;
-
-    public Hello(World world) {
-        this.world = world;
-    }
-
-    public void say() {
-        System.out.println(world.message);
-    }
-
-}
+package e2018.exam2.sol;
 
 class World {
     String message = "안녕하세요";
 
     public void doSomething() {
-        Hello hello = new Hello(this);
+        Hello hello = new Hello();
         hello.say();
+    }
+
+    class Hello {
+        public void say() {
+            System.out.println(message);
+        }
     }
 }
 

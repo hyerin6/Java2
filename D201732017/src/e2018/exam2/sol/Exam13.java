@@ -1,14 +1,7 @@
-package e2018.exam2;
+package e2018.exam2.sol;
 
 interface OnCreateListener {
     void onCreate();
-}
-
-class MyOnCreateListener implements OnCreateListener {
-    @Override
-    public void onCreate() {
-        System.out.println("MyOnCreateListener onCreate");
-    }
 }
 
 class MessageBox {
@@ -28,8 +21,12 @@ public class Exam13 {
 
     public static void main(String[] args) {
         MessageBox messageBox = new MessageBox();
-        MyOnCreateListener listener = new MyOnCreateListener();
-        messageBox.setButton(listener);
+        messageBox.setButton(new OnCreateListener() {
+            @Override
+            public void onCreate() {
+                System.out.println("MyOnCreateListener onCreate");
+            }
+        });
         messageBox.create();
     }
 }

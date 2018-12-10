@@ -1,64 +1,32 @@
 package e2018.exam2;
+
 import java.util.Arrays;
 
 public class Exam15 {
 
-	static void sort(int[] a) {  
-		Arrays.sort(a);
-	}
+    static void sort(int[] a) {
+        Arrays.sort(a);
+    }
 
-	static int[] insert(int[] a, int value) {
-		/*
-		int index = Arrays.binarySearch(a, value); 
+    static int[] insert(int[] a, int value) {
+        int index = Arrays.binarySearch(a, value);
+        if (index >= 0) return a;
+        index = -(index + 1);
+        int[] a2 = Arrays.copyOf(a, a.length + 1);
+        for (int i = a2.length - 1; i > index; --i)
+            a2[i] = a2[i - 1];
+        a2[index] = value;
+        return a2;
+    }
 
-		if (index >= 0) 
-			return a; 
+    public static void main(String[] args) {
+        int[] a = { 3, 8, 1, 2, 4, 5, 7 };
 
-		index = -(index + 1); 
+        sort(a);
+        System.out.println(Arrays.toString(a));
 
-		int[] a2 = Arrays.copyOf(a, a.length + 1);
-
-		for (int i = a2.length - 1; i > index; --i) 
-			a2[i] = a2[i - 1]; 
-
-		a2[index] = value; 
-		return a2;
-		 */
-		
-		int index = Arrays.binarySearch(a, value); 
-
-		if (index >= 0) 
-			return a; 
-
-		int[] tempArray = new int[a.length+1];
-		int length = a.length;
-		
-		for (int j = 0; j < length; j++) 
-			tempArray[j] = a[j];
-		
-		a = tempArray;
-		a[a.length-1] = value;
-		
-		sort(a);
-		return a;
-
-	}
-
-	public boolean search(int []a, int value) {
-		for(int i : a)
-			if(i == value) return false;
-		return true;
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] a = { 3, 8, 1, 2, 4, 5, 7 }; 
-
-		sort(a);  
-		System.out.println(Arrays.toString(a)); 
-		a = insert(a, 2);     
-		a = insert(a, 6);     
-		System.out.println(Arrays.toString(a)); 
-	}
-
+        a = insert(a, 2);
+        a = insert(a, 6);
+        System.out.println(Arrays.toString(a));
+    }
 }
